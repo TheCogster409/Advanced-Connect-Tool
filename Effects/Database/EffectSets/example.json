@@ -1,0 +1,11 @@
+{
+   "MPAMotorpoint" : {
+      "effectList" : [
+         {
+            "particles" : [ "motorpoint" ],
+            "type" : "particle"
+         }
+      ],
+      "maxInstances" : 16384
+   }
+}

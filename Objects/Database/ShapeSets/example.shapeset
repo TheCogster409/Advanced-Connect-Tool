@@ -1,0 +1,17 @@
+{
+   "partList" : [
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "MotorpointTriangle",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Objects/Renderable/TestPart.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "eebfcac1-9d96-4058-99f0-33b877bdfe6f"
+      }
+   ]
+}

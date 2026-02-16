@@ -1,0 +1,12 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/GroupedMotorpoints/Mesh/MiniMotorpointsMesh/MotorpointIcosphere2-MS-3x3x3.fbx",
+         "subMeshList" : [
+            {
+               "material" : "ConnectJoint"
+            }
+         ]
+      }
+   ]
+}

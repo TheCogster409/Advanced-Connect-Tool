@@ -1,0 +1,14 @@
+{
+   "toolList" : [
+      {
+         "name" : "Advanced Connection Tool",
+         "previewRenderable" : "",
+         "script" : {
+            "class" : "MPADefaultConnectTool",
+            "data" : {},
+            "file" : "$CONTENT_DATA/Scripts/MPADefaultConnectTool.lua"
+         },
+         "uuid" : "bad72411-f613-449f-b0f1-f9f054df526d"
+      }
+   ]
+}

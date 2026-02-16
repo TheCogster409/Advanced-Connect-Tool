@@ -1,0 +1,3 @@
+{
+   "shapeSetList" : [ "$CONTENT_DATA/GroupedMotorpoints/ShapeSets/MiniGroupedMotorpoints.shapeset", "$CONTENT_DATA/Motorpoints/ShapeSets/DefaultMotorpoints.shapeset" ]
+}

@@ -1,0 +1,17 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Motorpoints/Mesh/MotorpointCircle5.fbx",
+         "subMeshList" : [
+            {
+               "material" : "ConnectJoint"
+               //"textureList" : [
+               //   "$CONTENT_DATA/Objects/Motorpoints/motorpoint.png"
+                  //"$GAME_DATA/Textures/transparent.tga",
+                  //"$CONTENT_DATA/Objects/Textures/motorpoints/motorpointNone_asg.png"
+               //]
+            }
+         ]
+      }
+   ]
+}

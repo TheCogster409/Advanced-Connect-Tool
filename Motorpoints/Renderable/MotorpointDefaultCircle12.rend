@@ -1,0 +1,12 @@
+{
+   "lodList" : [
+      {
+         "mesh" : "$CONTENT_DATA/Motorpoints/Mesh/MotorpointCircle12.fbx",
+         "subMeshList" : [
+            {
+               "material" : "ConnectJoint"
+            }
+         ]
+      }
+   ]
+}

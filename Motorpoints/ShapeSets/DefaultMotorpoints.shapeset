@@ -1,0 +1,56 @@
+{
+   "partList" : [
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "MotorpointDefaultCircle5",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Motorpoints/Renderable/MotorpointDefaultCircle5.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : false,
+         "uuid" : "eebfcac1-9d96-4058-99f0-33b877bdfe6f"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "MotorpointDefaultCircle8",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Motorpoints/Renderable/MotorpointDefaultCircle8.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : false,
+         "uuid" : "8ef4c9c0-5239-4cbc-81a7-85577d22798a"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "MotorpointDefaultCircle12",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Motorpoints/Renderable/MotorpointDefaultCircle12.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : false,
+         "uuid" : "c1562342-eace-455c-b2da-0f2392f1896b"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "MotorpointDefaultCircle24",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/Motorpoints/Renderable/MotorpointDefaultCircle24.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : false,
+         "uuid" : "a84c4cac-d815-4261-a087-7b8a215af5dd"
+      }
+   ]
+}

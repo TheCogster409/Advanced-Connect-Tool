@@ -1,0 +1,264 @@
+{
+   "partList" : [
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 1
+         },
+         "name" : "GroupedMotorpoint1x1x1",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-1x1x1.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "50223dc8-a87f-4130-a36c-d6aa7a53649f"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 2
+         },
+         "name" : "GroupedMotorpoint1x1x2",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-1x1x2.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "981f3c1d-5a1b-4518-abf0-247969974a6d"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 3
+         },
+         "name" : "GroupedMotorpoint1x1x3",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-1x1x3.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "07142ffc-1ab6-410d-8b5a-065c60181cdd"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 1,
+            "z" : 4
+         },
+         "name" : "GroupedMotorpoint1x1x4",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-1x1x4.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "cd30adb7-ffe0-4ca4-9ba6-8ec49ca62162"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 2,
+            "z" : 2
+         },
+         "name" : "GroupedMotorpoint1x2x2",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-1x2x2.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "9ddfdb95-f73d-42e0-8f4e-7a730fc720a5"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 2,
+            "z" : 3
+         },
+         "name" : "GroupedMotorpoint1x2x3",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-1x2x3.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "7579e712-96d9-41bc-a9e9-0f55c3b51c58"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 2,
+            "z" : 4
+         },
+         "name" : "GroupedMotorpoint1x2x4",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-1x2x4.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "f36010e6-f68f-4f3e-824c-9d91ad22a9c4"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 3,
+            "z" : 3
+         },
+         "name" : "GroupedMotorpoint1x3x3",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-1x3x3.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "a459b1d7-13bb-4b39-b873-83afb21994c8"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 3,
+            "z" : 4
+         },
+         "name" : "GroupedMotorpoint1x3x4",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-1x3x4.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "0ffa00b2-a438-4c06-865e-793d53f68bc1"
+      },
+      {
+         "box" : {
+            "x" : 1,
+            "y" : 4,
+            "z" : 4
+         },
+         "name" : "GroupedMotorpoint1x4x4",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-1x4x4.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "fa5ad954-86b6-42c6-8a08-4fcc940d2d97"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 2
+         },
+         "name" : "GroupedMotorpoint2x2x2",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-2x2x2.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "2be172d5-cd5e-45e0-9bab-fa3f46b18de7"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 3
+         },
+         "name" : "GroupedMotorpoint2x2x3",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-2x2x3.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "530db76d-620d-4527-b8e9-381f1be5d0c2"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 2,
+            "z" : 4
+         },
+         "name" : "GroupedMotorpoint2x2x4",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-2x2x4.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "b710431b-db17-4176-95fc-2b011a5229bb"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 3,
+            "z" : 3
+         },
+         "name" : "GroupedMotorpoint2x3x3",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-2x3x3.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "339da438-f967-4915-8a5f-12c4f6818c05"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 3,
+            "z" : 4
+         },
+         "name" : "GroupedMotorpoint2x3x4",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-2x3x4.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "6379cebd-1d7d-44bf-8986-3c46afd36ad4"
+      },
+      {
+         "box" : {
+            "x" : 2,
+            "y" : 4,
+            "z" : 4
+         },
+         "name" : "GroupedMotorpoint2x4x4",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-2x4x4.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "bbe63a81-7a17-41be-9cfb-c9e1b5d79629"
+      },
+      {
+         "box" : {
+            "x" : 3,
+            "y" : 3,
+            "z" : 3
+         },
+         "name" : "GroupedMotorpoint3x3x3",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-3x3x3.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "6a2460f9-46e6-493e-a757-e9ddcfd5b7bb"
+      },
+      {
+         "box" : {
+            "x" : 3,
+            "y" : 3,
+            "z" : 4
+         },
+         "name" : "GroupedMotorpoint3x3x4",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-3x3x4.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "f364fafd-1e04-4dbf-a611-00a98ddf02d0"
+      },
+      {
+         "box" : {
+            "x" : 3,
+            "y" : 4,
+            "z" : 4
+         },
+         "name" : "GroupedMotorpoint3x4x4",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-3x4x4.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "648c6c5d-ac97-4630-ae33-56ada746e5a5"
+      },
+      {
+         "box" : {
+            "x" : 4,
+            "y" : 4,
+            "z" : 4
+         },
+         "name" : "GroupedMotorpoint4x4x4",
+         "physicsMaterial" : "Default",
+         "renderable" : "$CONTENT_DATA/GroupedMotorpoints/Renderable/MiniMotorpointsRenderables/MotorpointIcosphere2-MS-4x4x4.rend",
+         "rotationSet" : "Default",
+         "showInInventory" : true,
+         "uuid" : "6922f861-7e6c-4d6f-be56-5387a3cb7406"
+      }
+   ]
+}
