@@ -195,8 +195,6 @@ function MPADefaultConnectTool.client_onInteractableUpdate(self, bodies)
                     else 
                         currentMotorpoint[1]:setScale( sm.vec3.new(0.001953125,0.001953125,0.001953125) ) -- small point scale
                     end
-                    --currentMotorpoint[1]:setScale( sm.vec3.new(0.75,0.75,0.75) )
-                    --currentMotorpoint[1]:setScale( sm.vec3.new(0.001171875,0.001171875,0.001171875) )
                     currentMotorpoint[1]:setParameter("color", interactable:getColorNormal())--sm.color.new("ff0000"))
                     currentMotorpoint[1]:start()
                     self.motorpoints[#self.motorpoints+1] = currentMotorpoint
@@ -215,7 +213,7 @@ function MPADefaultConnectTool.client_onInteractableUpdate(self, bodies)
         end
         self.groupedMotorpoints = {}
         for body, interactables in pairs(groupedInteractables) do
-            local count = 0 -- if there are less than 250 parts then just skip this proccess its not worth it
+            local count = 0 -- if there are less than 150 parts then just skip this proccess its not worth it
             for i, k in pairs(interactables) do
                 count = count + 1
             end
@@ -226,7 +224,7 @@ function MPADefaultConnectTool.client_onInteractableUpdate(self, bodies)
                 local interactableGrid = {} -- Set up each interactable in a grid for fast greedy meshing
                 for i, interactable in pairs(interactables) do
                     local position = interactable:getShape().localPosition
-                    local posString = tostring(position.x)..","..tostring(position.y)..","..tostring(position.z) -- use a string as lua compares the value directly instead of using pointers
+                    local posString = tostring(position.x)..tostring(position.y)..tostring(position.z) -- use a string as lua compares the value directly instead of using pointers
                     interactableGrid[posString] = interactable
                 end
 
@@ -235,7 +233,7 @@ function MPADefaultConnectTool.client_onInteractableUpdate(self, bodies)
                     for y = minSize.y, maxSize.y, 1 do
                         for z = minSize.z, maxSize.z, 1 do
                             local modifiedPosition = sm.vec3.new(x,y,z)
-                            local posString = tostring(modifiedPosition.x)..","..tostring(modifiedPosition.y)..","..tostring(modifiedPosition.z)
+                            local posString = tostring(modifiedPosition.x)..tostring(modifiedPosition.y)..tostring(modifiedPosition.z)
                             -- then loop for each axis to get the maximum size
                             if interactableGrid[posString] ~= nil then
 
@@ -244,7 +242,7 @@ function MPADefaultConnectTool.client_onInteractableUpdate(self, bodies)
                                 while true do
                                     local testX = x + width
                                     if testX > maxSize.x then break end
-                                    local testKey = tostring(testX)..","..tostring(y)..","..tostring(z)
+                                    local testKey = tostring(testX)..tostring(y)..tostring(z)
                                     if interactableGrid[testKey] and width < 4 then -- make sure to max out at 4
                                         width = width + 1
                                     else
@@ -260,7 +258,7 @@ function MPADefaultConnectTool.client_onInteractableUpdate(self, bodies)
                                     local entireRowExists = true
                                     for columnOffset = 0, width - 1, 1 do
                                         local checkX = x + columnOffset
-                                        local checkKey = tostring(checkX)..","..tostring(testY)..","..tostring(z)
+                                        local checkKey = tostring(checkX)..tostring(testY)..tostring(z)
                                         if not interactableGrid[checkKey] then
                                             entireRowExists = false
                                             break
@@ -284,7 +282,7 @@ function MPADefaultConnectTool.client_onInteractableUpdate(self, bodies)
                                         for columnOffset = 0, width - 1 do
                                             local checkX = x + columnOffset
                                             local checkY = y + rowOffset
-                                            local checkKey = tostring(checkX)..","..tostring(checkY)..","..tostring(testZ)
+                                            local checkKey = tostring(checkX)..tostring(checkY)..tostring(testZ)
                                             if not interactableGrid[checkKey] then
                                                 entireLayerExists = false
                                                 break

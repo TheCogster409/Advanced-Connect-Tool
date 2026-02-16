@@ -6,7 +6,7 @@
          "script" : {
             "class" : "MPADefaultConnectTool",
             "data" : {},
-            "file" : "$CONTENT_DATA/Scripts/MPADefaultConnectTool.lua"
+            "file" : "$CONTENT_DATA/Scripts/LuaConnectTool.lua"
          },
          "uuid" : "bad72411-f613-449f-b0f1-f9f054df526d"
       }
