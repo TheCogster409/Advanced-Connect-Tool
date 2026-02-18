@@ -1,103 +1,5 @@
 MPADefaultConnectTool = class()
 
--- useful functions and more
-local function sort3(a, b, c)
-    if a > b then a, b = b, a end
-    if b > c then b, c = c, b end
-    if a > b then a, b = b, a end
-    return sm.vec3.new(a, b, c)
-end
-
-local sizeToUuid = {
-    ["111"] = sm.uuid.new("50223dc8-a87f-4130-a36c-d6aa7a53649f"),
-    ["112"] = sm.uuid.new("981f3c1d-5a1b-4518-abf0-247969974a6d"),
-    ["113"] = sm.uuid.new("07142ffc-1ab6-410d-8b5a-065c60181cdd"),
-    ["114"] = sm.uuid.new("cd30adb7-ffe0-4ca4-9ba6-8ec49ca62162"),
-    ["122"] = sm.uuid.new("9ddfdb95-f73d-42e0-8f4e-7a730fc720a5"),
-    ["123"] = sm.uuid.new("7579e712-96d9-41bc-a9e9-0f55c3b51c58"),
-    ["124"] = sm.uuid.new("f36010e6-f68f-4f3e-824c-9d91ad22a9c4"),
-    ["133"] = sm.uuid.new("a459b1d7-13bb-4b39-b873-83afb21994c8"),
-    ["134"] = sm.uuid.new("0ffa00b2-a438-4c06-865e-793d53f68bc1"),
-    ["144"] = sm.uuid.new("fa5ad954-86b6-42c6-8a08-4fcc940d2d97"),
-    ["222"] = sm.uuid.new("2be172d5-cd5e-45e0-9bab-fa3f46b18de7"),
-    ["223"] = sm.uuid.new("530db76d-620d-4527-b8e9-381f1be5d0c2"),
-    ["224"] = sm.uuid.new("b710431b-db17-4176-95fc-2b011a5229bb"),
-    ["233"] = sm.uuid.new("339da438-f967-4915-8a5f-12c4f6818c05"),
-    ["234"] = sm.uuid.new("6379cebd-1d7d-44bf-8986-3c46afd36ad4"),
-    ["244"] = sm.uuid.new("bbe63a81-7a17-41be-9cfb-c9e1b5d79629"),
-    ["333"] = sm.uuid.new("6a2460f9-46e6-493e-a757-e9ddcfd5b7bb"),
-    ["334"] = sm.uuid.new("f364fafd-1e04-4dbf-a611-00a98ddf02d0"),
-    ["344"] = sm.uuid.new("648c6c5d-ac97-4630-ae33-56ada746e5a5"),
-    ["444"] = sm.uuid.new("6922f861-7e6c-4d6f-be56-5387a3cb7406")
-}
-
-local sizeToRotation = {
-    ["111"] = sm.vec3.new(0, 0, 0),
-    ["112"] = sm.vec3.new(90, 0, 0),
-    ["113"] = sm.vec3.new(90, 0, 0),
-    ["114"] = sm.vec3.new(90, 0, 0),
-    ["121"] = sm.vec3.new(0, 0, 0),
-    ["122"] = sm.vec3.new(0, 0, 0),
-    ["123"] = sm.vec3.new(90, 0, 0),
-    ["124"] = sm.vec3.new(90, 0, 0),
-    ["131"] = sm.vec3.new(0, 0, 0),
-    ["132"] = sm.vec3.new(0, 0, 0),
-    ["133"] = sm.vec3.new(0, 0, 0),
-    ["134"] = sm.vec3.new(90, 0, 0),
-    ["141"] = sm.vec3.new(0, 0, 0),
-    ["142"] = sm.vec3.new(0, 0, 0),
-    ["143"] = sm.vec3.new(0, 0, 0),
-    ["144"] = sm.vec3.new(0, 0, 0),
-    ["211"] = sm.vec3.new(0, 0, 90),
-    ["212"] = sm.vec3.new(0, 0, 90),
-    ["213"] = sm.vec3.new(90, 90, 0),
-    ["214"] = sm.vec3.new(90, 90, 0),
-    ["221"] = sm.vec3.new(0, 90, 0),
-    ["222"] = sm.vec3.new(0, 0, 0),
-    ["223"] = sm.vec3.new(90, 0, 0),
-    ["224"] = sm.vec3.new(90, 0, 0),
-    ["231"] = sm.vec3.new(0, 90, 0),
-    ["232"] = sm.vec3.new(0, 0, 0),
-    ["233"] = sm.vec3.new(0, 0, 0),
-    ["234"] = sm.vec3.new(90, 0, 0),
-    ["241"] = sm.vec3.new(0, 90, 0),
-    ["242"] = sm.vec3.new(0, 0, 0),
-    ["243"] = sm.vec3.new(0, 0, 0),
-    ["244"] = sm.vec3.new(0, 0, 0),
-    ["311"] = sm.vec3.new(0, 0, 90),
-    ["312"] = sm.vec3.new(0, 0, 90),
-    ["313"] = sm.vec3.new(0, 0, 90),
-    ["314"] = sm.vec3.new(90, 90, 0),
-    ["321"] = sm.vec3.new(90, 0, 90),
-    ["322"] = sm.vec3.new(90, 0, 90),
-    ["323"] = sm.vec3.new(0, 0, 90),
-    ["324"] = sm.vec3.new(90, 90, 0),
-    ["331"] = sm.vec3.new(0, 90, 0),
-    ["332"] = sm.vec3.new(0, 90, 0),
-    ["333"] = sm.vec3.new(0, 0, 0),
-    ["334"] = sm.vec3.new(90, 0, 0),
-    ["341"] = sm.vec3.new(0, 90, 0),
-    ["342"] = sm.vec3.new(0, 90, 0),
-    ["343"] = sm.vec3.new(0, 0, 0),
-    ["344"] = sm.vec3.new(0, 0, 0),
-    ["411"] = sm.vec3.new(0, 0, 90),
-    ["412"] = sm.vec3.new(0, 0, 90),
-    ["413"] = sm.vec3.new(0, 0, 90),
-    ["414"] = sm.vec3.new(0, 0, 90),
-    ["421"] = sm.vec3.new(90, 0, 90),
-    ["422"] = sm.vec3.new(0, 0, 90),
-    ["423"] = sm.vec3.new(0, 0, 90),
-    ["424"] = sm.vec3.new(0, 0, 90),
-    ["431"] = sm.vec3.new(90, 0, 90),
-    ["432"] = sm.vec3.new(90, 0, 90),
-    ["433"] = sm.vec3.new(0, 0, 90),
-    ["434"] = sm.vec3.new(0, 0, 90),
-    ["441"] = sm.vec3.new(0, 90, 0),
-    ["442"] = sm.vec3.new(0, 90, 0),
-    ["443"] = sm.vec3.new(0, 90, 0),
-    ["444"] = sm.vec3.new(0, 0, 0)
-}
-
 -- Serverside Callbacks
 function MPADefaultConnectTool.server_onCreate( self )
     self.checkBodyOverride = false
@@ -158,24 +60,40 @@ function MPADefaultConnectTool.client_onInteractableUpdate(self, bodies)
         end
 
         print("\n\nrefresh")
+
+        local uuidsToGroup = {
+            ["9f0f56e8-2c31-4d83-996c-d00a9b296c3f"] = sm.color.new("#1e68bb"), -- Vanilla Logic Gate
+            ["6a9dbff5-7562-4e9a-99ae-3590ece88112"] = sm.color.new("#7514edff") -- mt fast logic gate
+        }
         
         local groupedInteractables = {}
         local newlyMadeInteractables = {}
         local interactables = {}
         
+        local ipairs = ipairs
         for i, body in ipairs(bodies) do
             if sm.exists(body) then
-                groupedInteractables[body] = {}
+                
+                groupedInteractables[body.id] = {["body"] = body, ["uuids"] = {}}
+                local uuids = groupedInteractables[body.id].uuids
 
-                local bodyInteractables = body:getInteractables() -- get all interactables in the body and mark it as a new one if it was not present last time
-                for k, bodyInteractable in ipairs(bodyInteractables) do
-                    if self.interactables[bodyInteractable.id] == nil then
-                        newlyMadeInteractables[bodyInteractable.id] = bodyInteractable
+                local bodyInteractables = body:getInteractables()
+                for i, bodyInteractable in ipairs(bodyInteractables) do
+                    local uuidMatch = false
+                    for uuid, color in pairs(uuidsToGroup) do
+                        if tostring(bodyInteractable.shape.shapeUuid) == uuid then
+                            uuids[uuid] = uuids[uuid] or {}
+                            uuids[uuid][bodyInteractable.id] = bodyInteractable
+                            uuidMatch = true
+                            break
+                        end
                     end
-                    interactables[bodyInteractable.id] = bodyInteractable
-
-                    if bodyInteractable.shape.shapeUuid == sm.uuid.new("9f0f56e8-2c31-4d83-996c-d00a9b296c3f") then -- if its a logic gate then mark it as a grouped one
-                        groupedInteractables[body][bodyInteractable.id] = bodyInteractable
+                
+                    if not uuidMatch then
+                        if self.interactables[bodyInteractable.id] == nil then
+                            newlyMadeInteractables[bodyInteractable.id] = bodyInteractable
+                        end
+                        interactables[bodyInteractable.id] = bodyInteractable
                     end
                 end
             end
@@ -184,9 +102,9 @@ function MPADefaultConnectTool.client_onInteractableUpdate(self, bodies)
         interactables = nil
         
         -- for each  non-grouped interactable, set up its effect
-        local function createNonGroupedMotorpoints(interactables, override)
+        local function createNonGroupedMotorpoints(interactables)
             for k, interactable in pairs(interactables) do
-                if (interactable.shape.shapeUuid ~= sm.uuid.new("9f0f56e8-2c31-4d83-996c-d00a9b296c3f") or override) and (interactable:getConnectionInputType() ~= sm.interactable.connectionType.none or interactable:getConnectionOutputType() ~= sm.interactable.connectionType.none) then
+                if interactable:getConnectionInputType() ~= sm.interactable.connectionType.none or interactable:getConnectionOutputType() ~= sm.interactable.connectionType.none then
                     local currentMotorpoint = {sm.effect.createEffect("ShapeRenderable", interactable), interactable}
                     currentMotorpoint[1]:setParameter("uuid", sm.uuid.new("a84c4cac-d815-4261-a087-7b8a215af5dd"))
                     
@@ -201,142 +119,248 @@ function MPADefaultConnectTool.client_onInteractableUpdate(self, bodies)
                 end
             end
         end
-        createNonGroupedMotorpoints(newlyMadeInteractables, false)
+        createNonGroupedMotorpoints(newlyMadeInteractables)
 
         -- set up effects for grouped interactables
-        if self.groupedMotorpoints then
-            for i, motorpointGroup in ipairs(self.groupedMotorpoints) do
-                if sm.exists( motorpointGroup ) then
-                    motorpointGroup:destroy()
-                end
-            end
+
+        -- useful stuff
+        local function sort3(a, b, c)
+            if a > b then a, b = b, a end
+            if b > c then b, c = c, b end
+            if a > b then a, b = b, a end
+            return a, b, c
         end
-        self.groupedMotorpoints = {}
-        for body, interactables in pairs(groupedInteractables) do
-            local count = 0 -- if there are less than 150 parts then just skip this proccess its not worth it
-            for i, k in pairs(interactables) do
-                count = count + 1
-            end
 
-            if count > 150 then -- greedy meshing
-                local minSize, maxSize = body:getLocalAabb()
+        local sizeToUuid = {
+            [111] = sm.uuid.new("50223dc8-a87f-4130-a36c-d6aa7a53649f"),
+            [112] = sm.uuid.new("981f3c1d-5a1b-4518-abf0-247969974a6d"),
+            [113] = sm.uuid.new("07142ffc-1ab6-410d-8b5a-065c60181cdd"),
+            [114] = sm.uuid.new("cd30adb7-ffe0-4ca4-9ba6-8ec49ca62162"),
+            [122] = sm.uuid.new("9ddfdb95-f73d-42e0-8f4e-7a730fc720a5"),
+            [123] = sm.uuid.new("7579e712-96d9-41bc-a9e9-0f55c3b51c58"),
+            [124] = sm.uuid.new("f36010e6-f68f-4f3e-824c-9d91ad22a9c4"),
+            [133] = sm.uuid.new("a459b1d7-13bb-4b39-b873-83afb21994c8"),
+            [134] = sm.uuid.new("0ffa00b2-a438-4c06-865e-793d53f68bc1"),
+            [144] = sm.uuid.new("fa5ad954-86b6-42c6-8a08-4fcc940d2d97"),
+            [222] = sm.uuid.new("2be172d5-cd5e-45e0-9bab-fa3f46b18de7"),
+            [223] = sm.uuid.new("530db76d-620d-4527-b8e9-381f1be5d0c2"),
+            [224] = sm.uuid.new("b710431b-db17-4176-95fc-2b011a5229bb"),
+            [233] = sm.uuid.new("339da438-f967-4915-8a5f-12c4f6818c05"),
+            [234] = sm.uuid.new("6379cebd-1d7d-44bf-8986-3c46afd36ad4"),
+            [244] = sm.uuid.new("bbe63a81-7a17-41be-9cfb-c9e1b5d79629"),
+            [333] = sm.uuid.new("6a2460f9-46e6-493e-a757-e9ddcfd5b7bb"),
+            [334] = sm.uuid.new("f364fafd-1e04-4dbf-a611-00a98ddf02d0"),
+            [344] = sm.uuid.new("648c6c5d-ac97-4630-ae33-56ada746e5a5"),
+            [444] = sm.uuid.new("6922f861-7e6c-4d6f-be56-5387a3cb7406")
+        }
+        
+        local sizeToRotation = {
+            [111] = sm.vec3.new(0, 0, 0),
+            [112] = sm.vec3.new(90, 0, 0),
+            [113] = sm.vec3.new(90, 0, 0),
+            [114] = sm.vec3.new(90, 0, 0),
+            [121] = sm.vec3.new(0, 0, 0),
+            [122] = sm.vec3.new(0, 0, 0),
+            [123] = sm.vec3.new(90, 0, 0),
+            [124] = sm.vec3.new(90, 0, 0),
+            [131] = sm.vec3.new(0, 0, 0),
+            [132] = sm.vec3.new(0, 0, 0),
+            [133] = sm.vec3.new(0, 0, 0),
+            [134] = sm.vec3.new(90, 0, 0),
+            [141] = sm.vec3.new(0, 0, 0),
+            [142] = sm.vec3.new(0, 0, 0),
+            [143] = sm.vec3.new(0, 0, 0),
+            [144] = sm.vec3.new(0, 0, 0),
+            [211] = sm.vec3.new(0, 0, 90),
+            [212] = sm.vec3.new(0, 0, 90),
+            [213] = sm.vec3.new(90, 90, 0),
+            [214] = sm.vec3.new(90, 90, 0),
+            [221] = sm.vec3.new(0, 90, 0),
+            [222] = sm.vec3.new(0, 0, 0),
+            [223] = sm.vec3.new(90, 0, 0),
+            [224] = sm.vec3.new(90, 0, 0),
+            [231] = sm.vec3.new(0, 90, 0),
+            [232] = sm.vec3.new(0, 0, 0),
+            [233] = sm.vec3.new(0, 0, 0),
+            [234] = sm.vec3.new(90, 0, 0),
+            [241] = sm.vec3.new(0, 90, 0),
+            [242] = sm.vec3.new(0, 0, 0),
+            [243] = sm.vec3.new(0, 0, 0),
+            [244] = sm.vec3.new(0, 0, 0),
+            [311] = sm.vec3.new(0, 0, 90),
+            [312] = sm.vec3.new(0, 0, 90),
+            [313] = sm.vec3.new(0, 0, 90),
+            [314] = sm.vec3.new(90, 90, 0),
+            [321] = sm.vec3.new(90, 0, 90),
+            [322] = sm.vec3.new(90, 0, 90),
+            [323] = sm.vec3.new(0, 0, 90),
+            [324] = sm.vec3.new(90, 90, 0),
+            [331] = sm.vec3.new(0, 90, 0),
+            [332] = sm.vec3.new(0, 90, 0),
+            [333] = sm.vec3.new(0, 0, 0),
+            [334] = sm.vec3.new(90, 0, 0),
+            [341] = sm.vec3.new(0, 90, 0),
+            [342] = sm.vec3.new(0, 90, 0),
+            [343] = sm.vec3.new(0, 0, 0),
+            [344] = sm.vec3.new(0, 0, 0),
+            [411] = sm.vec3.new(0, 0, 90),
+            [412] = sm.vec3.new(0, 0, 90),
+            [413] = sm.vec3.new(0, 0, 90),
+            [414] = sm.vec3.new(0, 0, 90),
+            [421] = sm.vec3.new(90, 0, 90),
+            [422] = sm.vec3.new(0, 0, 90),
+            [423] = sm.vec3.new(0, 0, 90),
+            [424] = sm.vec3.new(0, 0, 90),
+            [431] = sm.vec3.new(90, 0, 90),
+            [432] = sm.vec3.new(90, 0, 90),
+            [433] = sm.vec3.new(0, 0, 90),
+            [434] = sm.vec3.new(0, 0, 90),
+            [441] = sm.vec3.new(0, 90, 0),
+            [442] = sm.vec3.new(0, 90, 0),
+            [443] = sm.vec3.new(0, 90, 0),
+            [444] = sm.vec3.new(0, 0, 0)
+        }
 
-                local interactableGrid = {} -- Set up each interactable in a grid for fast greedy meshing
-                for i, interactable in pairs(interactables) do
-                    local position = interactable:getShape().localPosition
-                    local posString = tostring(position.x)..tostring(position.y)..tostring(position.z) -- use a string as lua compares the value directly instead of using pointers
-                    interactableGrid[posString] = interactable
+        for bodyID, data in pairs(groupedInteractables) do
+            local body = data.body
+            self.groupedMotorpoints[body.id] = {}
+            for uuid, interactables in pairs(data.uuids) do
+                local color = uuidsToGroup[tostring(uuid)]
+                local count = 0 -- if there are less than 150 parts then just skip this proccess its not worth it
+                for i, k in pairs(interactables) do
+                    count = count + 1
                 end
+                if count > 50 then -- greedy meshing
+                
+                    if self.groupedMotorpoints[body.id] then -- clear up existing motorpoints for this body
+                        for i, motorpointGroup in ipairs(self.groupedMotorpoints[body.id]) do
+                            if sm.exists( motorpointGroup ) then
+                                motorpointGroup:destroy()
+                            end
+                        end
+                    end
+                
+                    local minSize, maxSize = body:getLocalAabb()
+                    local sizeX = maxSize.x - minSize.x + 1
+                    local sizeY = maxSize.y - minSize.y + 1
+                    local sizeZ = maxSize.z - minSize.z + 1
 
-                 --loop through every position in the body
-                for x = minSize.x, maxSize.x, 1 do
-                    for y = minSize.y, maxSize.y, 1 do
-                        for z = minSize.z, maxSize.z, 1 do
-                            local modifiedPosition = sm.vec3.new(x,y,z)
-                            local posString = tostring(modifiedPosition.x)..tostring(modifiedPosition.y)..tostring(modifiedPosition.z)
-                            -- then loop for each axis to get the maximum size
-                            if interactableGrid[posString] ~= nil then
+                    -- useful function to make fast keys from a 3d position
+                    local function makeIndex(ix, iy, iz)
+                        return ((ix - minSize.x) * sizeY + (iy - minSize.y)) * sizeZ + (iz - minSize.z)
+                    end
+                    
+                    local interactableGrid = {}
+                    for i, interactable in pairs(interactables) do
+                        local position = interactable:getShape().localPosition
+                        local positionKey = makeIndex(position.x, position.y, position.z)
+                        interactableGrid[positionKey] = interactable
+                    end
+                    
+                    --loop through every position in the body
+                    for x = minSize.x, maxSize.x, 1 do
+                        for y = minSize.y, maxSize.y, 1 do
+                            for z = minSize.z, maxSize.z, 1 do
+                                
+                                local positionKey = makeIndex(x,y,z)
+                                local rootInteractable = interactableGrid[positionKey]
+                                -- then loop for each axis to get the maximum size
+                                if rootInteractable ~= nil then 
+                                    local rootShape = rootInteractable:getShape()
 
-                                -- find largest possible width/x
-                                local width = 1
-                                while true do
-                                    local testX = x + width
-                                    if testX > maxSize.x then break end
-                                    local testKey = tostring(testX)..tostring(y)..tostring(z)
-                                    if interactableGrid[testKey] and width < 4 then -- make sure to max out at 4
-                                        width = width + 1
-                                    else
-                                        break
-                                    end
-                                end
-
-                                -- find largest possible length/y
-                                local length = 1
-                                while true do
-                                    local testY = y + length
-                                    if testY > maxSize.y then break end
-                                    local entireRowExists = true
-                                    for columnOffset = 0, width - 1, 1 do
-                                        local checkX = x + columnOffset
-                                        local checkKey = tostring(checkX)..tostring(testY)..tostring(z)
-                                        if not interactableGrid[checkKey] then
-                                            entireRowExists = false
+                                    -- find largest possible width/x
+                                    local width = 1
+                                    while true do
+                                        local testX = x + width
+                                        if testX > maxSize.x then break end
+                                        local testKey = makeIndex(testX, y, z)
+                                        if interactableGrid[testKey] and width < 4 then -- make sure to max out at 4
+                                            width = width + 1
+                                        else
                                             break
                                         end
                                     end
-                                    if entireRowExists and length < 4 then -- make sure to max out at 4
-                                        length = length + 1
-                                    else
-                                        break
-                                    end
-                                end
 
-                                -- find largest possible depth/z
-                                local depth = 1
-                                while true do
-                                    local testZ = z + depth
-                                    if testZ > maxSize.z then break end
-                                
-                                    local entireLayerExists = true
-                                    for rowOffset = 0, length - 1 do
-                                        for columnOffset = 0, width - 1 do
-                                            local checkX = x + columnOffset
-                                            local checkY = y + rowOffset
-                                            local checkKey = tostring(checkX)..tostring(checkY)..tostring(testZ)
-                                            if not interactableGrid[checkKey] then
-                                                entireLayerExists = false
+                                    -- find largest possible length/y
+                                    local length = 1
+                                    while true do
+                                        local testY = y + length
+                                        if testY > maxSize.y then break end
+                                        local fullRowIsValid = true
+                                        for columnOffset = 0, width - 1, 1 do
+                                            local testX = x + columnOffset
+                                            local testKey = makeIndex(testX, testY, z)
+                                            if not interactableGrid[testKey] then
+                                                fullRowIsValid = false
                                                 break
                                             end
                                         end
-                                        if not entireLayerExists then break end
+                                        if fullRowIsValid and length < 4 then -- make sure to max out at 4
+                                            length = length + 1
+                                        else
+                                            break
+                                        end
                                     end
-                                
-                                    if entireLayerExists and depth < 4 then
-                                        depth = depth + 1
-                                    else
-                                        break
+
+                                    -- find largest possible height/z
+                                    local height = 1
+                                    while true do
+                                        local testZ = z + height
+                                        if testZ > maxSize.z then break end
+                                    
+                                        local fullLayerIsValid = true
+                                        for rowOffset = 0, length - 1 do
+                                            for columnOffset = 0, width - 1 do
+                                                local testX = x + columnOffset
+                                                local testY = y + rowOffset
+                                                local testKey = makeIndex(testX, testY, testZ)
+                                                if not interactableGrid[testKey] then
+                                                    fullLayerIsValid = false
+                                                    break
+                                                end
+                                            end
+                                            if not fullLayerIsValid then break end
+                                        end
+                                    
+                                        if fullLayerIsValid and height < 4 then
+                                            height = height + 1
+                                        else
+                                            break
+                                        end
                                     end
-                                end
 
-                                local shape = interactableGrid[posString]:getShape()
+                                    local sizeKey = width*100 + length*10 + height
+                                    local rotatedSizeX, rotatedSizeY, rotatedSizeZ = sort3(width, length, height)
+                                    local rotatedSizeKey = rotatedSizeX*100 + rotatedSizeY*10 + rotatedSizeZ
 
-                                local size = tostring(width)..tostring(length)..tostring(depth)
-                                local rotatedSize = sort3(width, length, depth)
-                                local rotatedSizeString = tostring(rotatedSize.x)..tostring(rotatedSize.y)..tostring(rotatedSize.z)
-                                local positionOffset = sm.vec3.new(width-1,length-1,depth-1)*0.125
+                                    local currentMotorpoint = sm.effect.createEffect("ShapeRenderable", interactableGrid[positionKey])
+                                    currentMotorpoint:setParameter("uuid", sizeToUuid[rotatedSizeKey])
+                                    --currentMotorpoint:setParameter("color", sm.color.new( math.random(), math.random(), math.random(), 1 ))--interactableColor
+                                    currentMotorpoint:setParameter("color", color)
+                                    currentMotorpoint:setOffsetRotation(sm.quat.inverse(rootShape.localRotation) * sm.quat.fromEuler(sizeToRotation[sizeKey]))
+                                    currentMotorpoint:setOffsetPosition(sm.quat.inverse(rootShape.localRotation) * sm.vec3.new(width-1,length-1,height-1)*0.125)
+                                    currentMotorpoint:setAutoPlay(true)
+                                    currentMotorpoint:start()
+                                    self.groupedMotorpoints[body.id][#self.groupedMotorpoints[body.id]+1] = currentMotorpoint
 
-                                local currentMotorpoint = sm.effect.createEffect("ShapeRenderable", interactableGrid[posString])
-                                currentMotorpoint:setParameter("uuid", sizeToUuid[rotatedSizeString])--sm.uuid.new("50223dc8-a87f-4130-a36c-d6aa7a53649f"))
-                                currentMotorpoint:setParameter("color", sm.color.new("#1e68bb"))--sm.color.new( math.random(), math.random(), math.random(), 1 ))
-                                currentMotorpoint:setOffsetRotation(sm.quat.inverse(shape.localRotation) * sm.quat.fromEuler(sizeToRotation[size]))
-                                currentMotorpoint:setOffsetPosition(sm.quat.inverse(shape.localRotation) * positionOffset)
-                                currentMotorpoint:setAutoPlay(true)
-                                currentMotorpoint:start()
-                                self.groupedMotorpoints[#self.groupedMotorpoints+1] = currentMotorpoint
-
-                                if shape.color == sm.color.new("eeeeee") then -- debug information
-                                    sm.gui.displayAlertText( size, 1.5 )    
-                                    print(size)
-                                    print(sizeToRotation[size])
-                                end
-
-                                for rowOffset = 0, length - 1 do
-                                    for columnOffset = 0, width - 1 do
-                                        for layerOffset = 0, depth - 1 do
-                                            local removeX = x + columnOffset
-                                            local removeY = y + rowOffset
-                                            local removeZ = z + layerOffset
-                                            local removeKey = tostring(removeX)..","..tostring(removeY)..","..tostring(removeZ)
-                                            interactableGrid[removeKey] = nil
+                                    for rowOffset = 0, length - 1 do
+                                        for columnOffset = 0, width - 1 do
+                                            for layerOffset = 0, height - 1 do
+                                                local removeX = x + columnOffset
+                                                local removeY = y + rowOffset
+                                                local removeZ = z + layerOffset
+                                                local removeKey = makeIndex(removeX, removeY, removeZ)
+                                                interactableGrid[removeKey] = nil
+                                            end
                                         end
                                     end
                                 end
                             end
                         end
                     end
+                else -- individual motorpoints
+                    createNonGroupedMotorpoints(interactables)
                 end
-            else -- individual motorpoints
-                createNonGroupedMotorpoints(interactables, true)
             end
         end
     end
@@ -359,13 +383,16 @@ function MPADefaultConnectTool.client_onUnequip( self, animate )
         end
     end
     if self.groupedMotorpoints then
-        for i, motorpointGroup in ipairs(self.groupedMotorpoints) do
-            if sm.exists( motorpointGroup ) then
-                motorpointGroup:destroy()
+            for bodyId, motorpointList in pairs(self.groupedMotorpoints) do
+                for i, motorpointEffect in ipairs(motorpointList) do
+                    if sm.exists(motorpointEffect) then
+                        motorpointEffect:destroy()
+                    end
+                end
             end
         end
-    end
     self.motorpoints = {}
+    self.groupedMotorpoints = {}
 end
 
 function MPADefaultConnectTool.client_onEquippedUpdate( self, primaryState, secondaryState, forceBuild )
